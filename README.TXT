@@ -1,14 +1,5 @@
-Project: online-shop
-Authors: Michael Kölling and David J. Barnes
+5. It works as expected, but there is a small problem in the logic. The comment says that the rating should be between 1 and 5, inclusive, which means that it shouldn't ever be 0 or 5+. However, the line return rating < 0 || rating > 5; makes it so that putting a rating of 0 is possible.
 
-This project is part of the material for the book
+9. No, it will not work correctly without any comments for the item. We are using an iterator to go over the comments list, so if the comments list is empty, the line Comment best = it.next(); will throw a NoSuchElementException at runtime.
 
-   Objects First with Java - A Practical Introduction using BlueJ
-   Seventh edition
-   David J. Barnes and Michael Kölling
-
-This project implements a small part of an online sales system (such as Amazon.com).
-The current project is concerned only with customer comments for sales items. It contains
-code to create, store, show and manipulate customer comments.
-
-NOTE: There are several serious errors to be found in these classes.
+10. Yes, all tests should pass now, whether positive or negative
