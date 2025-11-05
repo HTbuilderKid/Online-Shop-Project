@@ -132,6 +132,9 @@ public class SalesItem
      */
     public Comment findMostHelpfulComment()
     {
+        if (comments.isEmpty()) {
+            return null;
+        }
         Iterator<Comment> it = comments.iterator();
         Comment best = it.next();
         while(it.hasNext()) {
@@ -146,10 +149,11 @@ public class SalesItem
     /**
      * Check whether the given rating is invalid. Return true if it is invalid.
      * Valid ratings are in the range [1..5].
+     * To fix the problem, just change the 0 to a 1
      */
     private boolean ratingInvalid(int rating)
     {
-        return rating < 0 || rating > 5;
+        return rating < 1 || rating > 5;
     }
     
     /**
